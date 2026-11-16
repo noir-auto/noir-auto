@@ -1,0 +1,453 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090a0b">
+<meta name="description" content="NOIR AUTO — профессиональный уход за автомобилем. Детейлинг, полировка, химчистка и защита кузова.">
+<title>NOIR AUTO — Детейлинг нового уровня</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#090a0b;
+  --panel:#111315;
+  --panel2:#181b1e;
+  --text:#f2f2ef;
+  --muted:#92979b;
+  --line:rgba(255,255,255,.1);
+  --accent:#c5c7c5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:Manrope,Arial,sans-serif;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+img{display:block;width:100%;object-fit:cover}
+.container{width:min(1180px,90%);margin:auto}
+header{
+  position:fixed;top:0;left:0;width:100%;z-index:100;
+  background:rgba(9,10,11,.8);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  height:78px;display:flex;align-items:center;
+  justify-content:space-between;
+}
+.logo{font-size:23px;font-weight:800;letter-spacing:5px}
+.logo span{color:#8b8e91}
+.navlinks{display:flex;gap:32px;align-items:center}
+.navlinks a{font-size:12px;color:#b6b8b9;transition:.25s}
+.navlinks a:hover{color:white}
+.navcta,.button{
+  display:inline-flex;justify-content:center;align-items:center;
+  padding:14px 23px;border:1px solid #d4d5d3;
+  background:#e9e9e6;color:#111;
+  font-size:11px;font-weight:800;letter-spacing:1px;
+  text-transform:uppercase;transition:.3s;cursor:pointer;
+}
+.navcta:hover,.button:hover{background:white;transform:translateY(-3px)}
+.menu{display:none;background:none;border:0;color:white;font-size:26px;cursor:pointer}
+.hero{
+  min-height:850px;height:100svh;max-height:1050px;
+  position:relative;display:flex;align-items:center;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,rgba(5,6,7,.96),rgba(5,6,7,.55) 55%,rgba(5,6,7,.1)),
+    linear-gradient(0deg,#090a0b 0%,transparent 35%),
+    url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=2200') center/cover;
+  transform:scale(1.04);
+  animation:herozoom 12s ease-in-out infinite alternate;
+}
+@keyframes herozoom{to{transform:scale(1.1)}}
+.hero-content{position:relative;z-index:2;padding-top:70px}
+.eyebrow{
+  color:#b6b8b8;font-size:10px;letter-spacing:4px;
+  text-transform:uppercase;margin-bottom:25px;
+}
+.hero h1{
+  font-size:clamp(55px,10vw,125px);
+  line-height:.95;letter-spacing:-7px;font-weight:800;
+  max-width:900px;
+}
+.hero h1 span{color:#999d9e}
+.hero p{
+  max-width:440px;color:#b3b6b7;
+  font-size:14px;line-height:1.9;margin:30px 0;
+}
+.hero-bottom{
+  position:absolute;bottom:45px;left:5%;right:5%;
+  display:flex;justify-content:space-between;
+  color:#a0a3a4;font-size:10px;letter-spacing:2px;
+}
+section{padding:115px 0}
+.section-label{
+  font-size:10px;letter-spacing:3px;
+  color:#a5a8a9;text-transform:uppercase;margin-bottom:17px;
+}
+.section-title{
+  font-size:clamp(34px,5vw,65px);
+  line-height:1.05;letter-spacing:-3px;
+  margin-bottom:25px;
+}
+.section-desc{color:var(--muted);font-size:14px;line-height:1.9;max-width:540px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
+.about-image{height:500px;position:relative;overflow:hidden}
+.about-image img{height:100%;transition:transform .8s}
+.about-image:hover img{transform:scale(1.04)}
+.about-stats{display:flex;gap:40px;margin-top:38px}
+.stat strong{font-size:29px;display:block}
+.stat span{font-size:10px;color:var(--muted)}
+.services{background:#101214}
+.services-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:45px}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.service{
+  background:var(--panel2);border:1px solid var(--line);
+  padding:30px;min-height:265px;transition:.35s;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.service:hover{border-color:#85898b;transform:translateY(-5px)}
+.service-num{font-size:11px;color:#818587}
+.service h3{font-size:19px;margin:22px 0 12px}
+.service p{font-size:12px;line-height:1.8;color:var(--muted)}
+.price{font-size:20px;font-weight:800;margin-top:23px}
+.price small{font-size:10px;font-weight:400;color:var(--muted)}
+.note{font-size:11px;color:var(--muted);margin-top:20px;line-height:1.8}
+.gallery-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:13px}
+.gallery-col{display:grid;gap:13px}
+.gallery-item{height:260px;overflow:hidden;position:relative;cursor:pointer;background:#17191b}
+.gallery-item.large{height:533px}
+.gallery-item img{height:100%;transition:.7s}
+.gallery-item:hover img{transform:scale(1.06)}
+.gallery-item:after{
+  content:"ОТКРЫТЬ ↗";position:absolute;bottom:18px;left:20px;
+  font-size:10px;letter-spacing:2px;
+  opacity:0;transition:.3s;
+}
+.gallery-item:hover:after{opacity:1}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:45px}
+.step{border-top:1px solid #555;padding-top:23px}
+.step span{font-size:11px;color:#85898b}
+.step h3{font-size:17px;margin:20px 0 12px}
+.step p{font-size:12px;color:var(--muted);line-height:1.8}
+.faq{background:#101214}
+.faq-list{max-width:800px;margin-top:35px}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-question{
+  width:100%;display:flex;justify-content:space-between;
+  text-align:left;background:none;border:0;color:white;
+  padding:24px 0;cursor:pointer;font-size:14px;
+}
+.faq-question span:last-child{font-size:20px;color:#9b9d9e}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s}
+.faq-answer p{font-size:13px;color:var(--muted);line-height:1.9;padding:0 0 22px}
+.faq-item.open .faq-answer{max-height:180px}
+.contact{
+  text-align:center;position:relative;overflow:hidden;
+}
+.contact .section-title{font-size:clamp(40px,8vw,90px)}
+.contact p{margin:20px auto 32px;max-width:450px;color:var(--muted);line-height:1.8;font-size:13px}
+.phone{display:block;font-size:clamp(23px,5vw,38px);font-weight:700;margin:28px 0}
+footer{border-top:1px solid var(--line);padding:30px 0}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}
+footer p{font-size:10px;color:var(--muted)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s}
+.reveal.visible{opacity:1;transform:none}
+.lightbox{
+  position:fixed;inset:0;background:rgba(0,0,0,.94);
+  z-index:300;display:none;align-items:center;justify-content:center;padding:25px;
+}
+.lightbox.active{display:flex}
+.lightbox img{max-width:100%;max-height:85vh;width:auto}
+.lightbox button{
+  position:absolute;top:25px;right:30px;
+  background:none;border:0;color:white;font-size:35px;cursor:pointer
+}
+@media(max-width:800px){
+  .navlinks{
+    display:none;position:absolute;top:78px;left:0;width:100%;
+    background:#101214;padding:25px 5%;
+    flex-direction:column;align-items:flex-start;gap:25px;
+    border-bottom:1px solid var(--line)
+  }
+  .navlinks.active{display:flex}
+  .menu{display:block}
+  .navcta{display:none}
+  .hero{min-height:750px}
+  .hero h1{letter-spacing:-3px}
+  .about-grid{grid-template-columns:1fr;gap:35px}
+  .about-image{height:350px}
+  .service-grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .services-head{display:block}
+  .gallery-grid{grid-template-columns:1fr}
+  .gallery-item.large{height:350px}
+  .gallery-item{height:230px}
+}
+@media(max-width:480px){
+  section{padding:80px 0}
+  .service-grid{grid-template-columns:1fr}
+  .service{min-height:220px}
+  .steps{grid-template-columns:1fr}
+  .about-stats{gap:22px}
+  .hero-bottom{font-size:8px}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="logo">NOIR<span>.</span></a>
+    <nav class="navlinks" id="navlinks">
+      <a href="#about">О НАС</a>
+      <a href="#services">УСЛУГИ</a>
+      <a href="#gallery">ГАЛЕРЕЯ</a>
+      <a href="#process">ПРОЦЕСС</a>
+      <a href="#contact">КОНТАКТЫ</a>
+    </nav>
+    <a class="navcta" href="tel:+79103555096">ЗАПИСАТЬСЯ ↗</a>
+    <button class="menu" id="menu" aria-label="Открыть меню" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="container hero-content">
+    <div class="eyebrow">AUTOMOTIVE DETAILING · CARE · PROTECTION</div>
+    <h1>BEYOND<br><span>THE SHINE.</span></h1>
+    <p>Профессиональный уход за автомобилем. Детализация, восстановление и защита каждой поверхности.</p>
+    <a class="button" href="#services">ИЗУЧИТЬ УСЛУГИ ↗</a>
+  </div>
+  <div class="hero-bottom">
+    <span>NOIR AUTO / DETAILING</span>
+    <span>PRECISION IN EVERY DETAIL</span>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-image reveal">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=1000" alt="Профессиональный уход за автомобилем">
+    </div>
+    <div class="reveal">
+      <div class="section-label">01 / PHILOSOPHY</div>
+      <h2 class="section-title">НЕ ПРОСТО<br>ЧИСТОТА.</h2>
+      <p class="section-desc">
+        NOIR AUTO — индивидуальный подход к уходу за автомобилем.
+        От тщательной очистки интерьера до восстановления блеска
+        лакокрасочного покрытия.
+      </p>
+      <div class="about-stats">
+        <div class="stat"><strong>01</strong><span>ИНДИВИДУАЛЬНЫЙ ПОДХОД</span></div>
+        <div class="stat"><strong>360°</strong><span>ВНИМАНИЕ К ДЕТАЛЯМ</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+ <div class="container">
+  <div class="services-head reveal">
+   <div>
+    <div class="section-label">02 / SERVICES</div>
+    <h2 class="section-title">НАШИ УСЛУГИ</h2>
+    <p class="section-desc">Уход за кузовом и интерьером с вниманием к каждой детали.</p>
+   </div>
+  </div>
+  <div class="service-grid">
+   <article class="service reveal">
+    <span class="service-num">01 / EXTERIOR</span>
+    <div><h3>Детейлинг-мойка</h3><p>Бережное очищение кузова, колёс и труднодоступных зон.</p></div>
+    <div class="price">от 2 500 ₽ <small>/ автомобиль</small></div>
+   </article>
+   <article class="service reveal">
+    <span class="service-num">02 / PAINT</span>
+    <div><h3>Полировка кузова</h3><p>Восстановление визуального блеска лакокрасочного покрытия.</p></div>
+    <div class="price">от 8 000 ₽ <small>/ автомобиль</small></div>
+   </article>
+   <article class="service reveal">
+    <span class="service-num">03 / INTERIOR</span>
+    <div><h3>Химчистка салона</h3><p>Глубокая очистка элементов интерьера и обивки.</p></div>
+    <div class="price">от 6 000 ₽ <small>/ автомобиль</small></div>
+   </article>
+   <article class="service reveal">
+    <span class="service-num">04 / PROTECTION</span>
+    <div><h3>Керамическое покрытие</h3><p>Защитная обработка кузова специальным составом.</p></div>
+    <div class="price">от 12 000 ₽ <small>/ автомобиль</small></div>
+   </article>
+   <article class="service reveal">
+    <span class="service-num">05 / GLASS</span>
+    <div><h3>Уход за стёклами</h3><p>Очистка и обработка стеклянных поверхностей.</p></div>
+    <div class="price">от 1 500 ₽ <small>/ автомобиль</small></div>
+   </article>
+   <article class="service reveal">
+    <span class="service-num">06 / COMPLEX</span>
+    <div><h3>Комплексный уход</h3><p>Сочетание нескольких процедур по состоянию автомобиля.</p></div>
+    <div class="price">от 15 000 ₽ <small>/ автомобиль</small></div>
+   </article>
+  </div>
+  <p class="note">Стоимость указана ориентировочно для демонстрации сайта. Итоговая цена зависит от автомобиля, состояния поверхностей и объёма работ. Все цены необходимо согласовать с мастером.</p>
+ </div>
+</section>
+
+<section id="gallery">
+ <div class="container">
+  <div class="section-label reveal">03 / VISUAL EXPERIENCE</div>
+  <h2 class="section-title reveal">ЭСТЕТИКА<br>В ДЕТАЛЯХ.</h2>
+  <div class="gallery-grid">
+   <div class="gallery-item large reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200" alt="Автомобиль"></div>
+   <div class="gallery-col">
+    <div class="gallery-item reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=900" alt="Детейлинг автомобиля"></div>
+    <div class="gallery-item reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=900" alt="Автомобиль в студии"></div>
+   </div>
+  </div>
+  <p class="note">Иллюстративные фотографии. Замените их реальными фотографиями работ мастера перед публикацией.</p>
+ </div>
+</section>
+
+<section id="process">
+ <div class="container">
+  <div class="section-label reveal">04 / HOW WE WORK</div>
+  <h2 class="section-title reveal">ПРОСТОЙ<br>ПРОЦЕСС.</h2>
+  <div class="steps">
+   <div class="step reveal"><span>STEP 01</span><h3>Заявка</h3><p>Связываетесь с мастером и описываете задачу.</p></div>
+   <div class="step reveal"><span>STEP 02</span><h3>Осмотр</h3><p>Оценивается состояние автомобиля и объём работ.</p></div>
+   <div class="step reveal"><span>STEP 03</span><h3>Работа</h3><p>Выполняются согласованные процедуры ухода.</p></div>
+   <div class="step reveal"><span>STEP 04</span><h3>Результат</h3><p>Автомобиль передаётся владельцу после проверки.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="faq" id="faq">
+ <div class="container">
+  <div class="section-label reveal">05 / FAQ</div>
+  <h2 class="section-title reveal">ВАШИ ВОПРОСЫ.</h2>
+  <div class="faq-list">
+   <div class="faq-item">
+    <button class="faq-question"><span>Сколько времени занимает работа?</span><span>+</span></button>
+    <div class="faq-answer"><p>Продолжительность зависит от выбранной услуги, размера автомобиля и состояния поверхностей. Сроки мастер согласует после осмотра.</p></div>
+   </div>
+   <div class="faq-item">
+    <button class="faq-question"><span>Как узнать точную стоимость?</span><span>+</span></button>
+    <div class="faq-answer"><p>Позвоните мастеру, расскажите о своём автомобиле и желаемой услуге. Точная стоимость определяется индивидуально.</p></div>
+   </div>
+   <div class="faq-item">
+    <button class="faq-question"><span>Можно ли заказать несколько услуг?</span><span>+</span></button>
+    <div class="faq-answer"><p>Да, можно обсудить комплекс процедур. Состав и стоимость работ согласуются заранее.</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="container reveal">
+  <div class="section-label">06 / CONTACT</div>
+  <h2 class="section-title">YOUR CAR.<br>OUR DETAIL.</h2>
+  <p>Расскажите, какой уход нужен вашему автомобилю. Обсудим задачу и подберём подходящие процедуры.</p>
+  <a class="phone" href="tel:+79103555096">+7 910 355-50-96</a>
+  <a class="button" href="tel:+79103555096">ПОЗВОНИТЬ МАСТЕРУ ↗</a>
+  <p class="note">Перед звонком можно подготовить марку, модель и год автомобиля.</p>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container footer-inner">
+  <a href="#home" class="logo">NOIR<span>.</span></a>
+  <p>NOIR AUTO · DETAILING EXPERIENCE</p>
+  <p>© <span id="year"></span> NOIR AUTO</p>
+ </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фотографии">
+ <button id="closeLightbox" aria-label="Закрыть">×</button>
+ <img id="lightboxImage" alt="Увеличенное изображение">
+</div>
+
+<script>
+const menu = document.getElementById('menu');
+const navlinks = document.getElementById('navlinks');
+
+menu.addEventListener('click', () => {
+  const opened = navlinks.classList.toggle('active');
+  menu.setAttribute('aria-expanded', String(opened));
+  menu.textContent = opened ? '×' : '☰';
+});
+
+navlinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navlinks.classList.remove('active');
+    menu.setAttribute('aria-expanded','false');
+    menu.textContent = '☰';
+  });
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:0.12});
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const item = button.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(faq => {
+      faq.classList.remove('open');
+      faq.querySelector('.faq-question span:last-child').textContent = '+';
+    });
+    if(!wasOpen) {
+      item.classList.add('open');
+      button.querySelector('span:last-child').textContent = '−';
+    }
+  });
+});
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+
+document.querySelectorAll('.gallery-item img').forEach(img => {
+  img.addEventListener('click', () => {
+    lightboxImage.src = img.src;
+    lightboxImage.alt = img.alt;
+    lightbox.classList.add('active');
+  });
+});
+
+function closeLightbox(){
+  lightbox.classList.remove('active');
+  lightboxImage.src = '';
+}
+document.getElementById('closeLightbox').addEventListener('click',closeLightbox);
+lightbox.addEventListener('click',e=>{
+  if(e.target === lightbox) closeLightbox();
+});
+document.addEventListener('keydown',e=>{
+  if(e.key === 'Escape') closeLightbox();
+});
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
